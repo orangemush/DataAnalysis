@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+
+    <!-- Google Fonts  -->
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+
+
+<!-- 프로젝트 타이틀 시작 -->
+<body style="background-color: black; margin: 0px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+  <div style="font-size: 90px; color:blanchedalmond; text-align: center;
+  padding-top: 90px; padding-left: 30px;">영화 관객 수 예측</div>
+<!-- 프로젝트 타이틀 끝 -->
+
+<!-- 이미지 및 검색기능 시작 -->
+  <div style="width: 100%; height: 600px;">
+    <div 
+      style="background-image: URL(https://london.frenchmorning.com/wp-content/uploads/sites/10/2018/09/cine%CC%81ma.jpg); 
+      height:800px; width:100; background-repeat:repeat-x; background-size: cover;
+      ">
+    </div>
+  </div>
+
+    <div class="container" style="font-size: 100px; text-align: center; height: 10px; width: 100%;;">
+      <div>
+        <form action="/post" method='POST'>
+          {% csrf_token %}
+
+          <div style="color: blanchedalmond; margin-top: 100px; margin-bottom: 0px; font-size: 70px">
+            <label for="movieName">영화 이름 입력 </label>
+          </div>
+          <input type="text" name="movieName" style="width:500px;height:100px;font-size:30px;
+           box-shadow: 1px 1px 3px 1px #dadce0; color: black">
+
+           <span style="margin-top: -50px;">
+            <input type="submit" value="Enter" 
+            style="width:100px;height:100px;font-size:30px; border-radius: 10px;
+            box-shadow: 1px 1px 3px 1px #dadce0; color: rgb(160, 17, 17);
+            background-color: black">
+           </span>
+        </form>
+      </div>
+      <!-- 이미지 및 검색기능 끝-->
+
+    {% if status %}
+        <!-- 결과값 출력란 -->
+        <div style="width: 100%;">
+          <div style="width: 300px; height: 60px; background-color: rgb(233, 181, 181);
+          margin-top: 30px; display: inline-block; font-size: 50px;
+          border-radius: 5px; border: 3px; box-shadow: 1px 1px 10px #dadce0;"> 예상값: 150
+          </div>
+        </div>
+          <!-- 결과값 출력란 -->
+
+          <!-- 영화 데이터 시작 -->
+          <div style="width: 100%; background-color: black; padding-top: 30px;">
+            <div style="font-size: 150px; float: left; background-color: black;
+            height: 450px; width: 100%;  padding-bottom: 50px;">
+              <div style="display: inline-block; background-color: black; position: relative;
+              height: 100%; width: 333px;">
+                <img class="fit-picture"
+                src={{movie_img_url}} style="height: 450px; width: 350px; text-align: left;">
+                <span style="position: absolute;"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    {% endif %}
+        <!-- 영화 데이터 출력 끝 -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
