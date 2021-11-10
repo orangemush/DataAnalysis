@@ -4,7 +4,8 @@ import time
 import pandas as pd
 import numpy as np
 
-api_key  = "RGAPI-cb0427f5-c69a-4ae4-a5b0-79317f1de441"
+from config import api_key
+
 kr_api   = "https://kr.api.riotgames.com"
 asia_api = "https://asia.api.riotgames.com"
 api_limit_secs = 125
