@@ -3,5 +3,4 @@
 ## 분석 프로젝트 리스트
 ### 1. tokyo_ops_prediction
 ### 2. movie_number_of_audience_prediction
-### 3. league_of_legends
-### 4. airbnb
+### 3. league_of_legends(ing)
